@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     const fetching = async () => {
       try {
-        const response = await axios.post("http://localhost:5000/api/data");
+        const response = await axios.post(process.env.REACT_APP_SERVER_URL + "/api/data");
         if (response.data) {
           setFetchedData(response.data.data);
           setIsLoading(false);
